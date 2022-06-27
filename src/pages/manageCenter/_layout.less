@@ -1,2 +1,108 @@
-.a {
+@import '../../common/styles/index.less';
+.managegeLayout {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow-x: hidden;
+  .compatible(user-select, none); //引入文件得来
+  .layout {
+    display: flex;
+    height: 100%;
+    // min-width: 1240px;
+    position: relative;
+
+    .header {
+      width: 100%;
+      z-index: 9;
+      min-width: 1240px;
+      //   text-align: center;
+      display: flex;
+      padding: 0;
+      color: white;
+      font-weight: 400;
+      position: fixed;
+      font-size: large;
+      .backHome {
+      }
+      .manageCenter {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+      .personal {
+        width: auto;
+      }
+    }
+    .layoutContent {
+      flex: 1 1 auto;
+      margin-top: 64px;
+      height: 100%;
+      .contentLeft {
+        height: calc(100% - 60px);
+        position: fixed;
+        background-color: #fff;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          width: 6px; //y轴滚动条粗细
+          height: 6px; //x轴滚动条粗细
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          background-color: white;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: #14ceff;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+        }
+      }
+
+      .contentRight {
+        padding: 0 10px;
+        min-height: 100%;
+        // min-width: 1240px;
+        background-color: rgb(240, 242, 245);
+        margin-left: 200px;
+        .compatible(transition, margin-left 0.5s);
+        // overflow-y: hidden;
+        // &::-webkit-scrollbar {
+        //   width: 6px; //y轴滚动条粗细
+        //   height: 6px; //x轴滚动条粗细
+        //   -webkit-border-radius: 5px;
+        //   -moz-border-radius: 5px;
+        //   border-radius: 5px;
+        //   background-color: white;
+        // }
+
+        // &::-webkit-scrollbar-thumb {
+        //   background-color: #14ceff;
+        //   -webkit-border-radius: 5px;
+        //   -moz-border-radius: 5px;
+        //   border-radius: 5px;
+        // }
+        .triggle {
+          padding: 0 10px 0 0;
+          display: inline-block;
+          font-size: 18px;
+          cursor: pointer;
+          transition: color 0.3s;
+          &:hover {
+            color: #1890ff;
+          }
+        }
+        .breadcrumb {
+          display: flex;
+          align-items: center;
+        }
+        .childrenContent {
+          min-height: auto;
+        }
+      }
+      .collapsed {
+        margin-left: 80px;
+        .compatible(transition, margin-left 0s ease); //引入文件得来
+      }
+    }
+  }
 }

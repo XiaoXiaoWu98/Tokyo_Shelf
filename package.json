@@ -1,12 +1,14 @@
 {
   "private": true,
+  "version": "0.0.1",
   "scripts": {
-    "start": "umi dev",
+    "start": "cross-env UMI_ENV=local umi dev",
     "build": "umi build",
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "cli": "ts-node cli/index.ts"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -15,23 +17,34 @@
     "src/**/*.{jsx,tsx,ts,js,json,css,md}": [
       "prettier --write",
       "eslint --fix"
-     
     ]
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
     "@umijs/preset-react": "1.x",
+    "ahooks": "^2.10.3",
+    "antd-dayjs-webpack-plugin": "^1.0.6",
+    "axios": "^0.21.1",
+    "cross-env": "^7.0.3",
+    "crypto-js": "^4.1.1",
+    "dayjs": "^1.10.5",
+    "mockjs": "^1.1.0",
     "save-dev": "0.0.1-security",
     "umi": "^3.4.11"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.13.15",
+    "@types/crypto-js": "^4.1.1",
+    "@types/git-user-name": "^2.0.1",
+    "@types/mockjs": "^1.0.3",
     "@types/qs": "^6.9.6",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/webpack-env": "^1.17.0",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "@umijs/test": "^3.4.11",
+    "api-generator-ci": "^1.0.4",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.24.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -40,12 +53,17 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
+    "fs-extra": "^10.1.0",
+    "git-user-name": "^2.0.0",
     "lint-staged": "^10.0.7",
+    "path": "^0.12.7",
     "prettier": "^2.2.0",
+    "project-build-ci": "^1.0.12",
     "qs": "^6.10.1",
     "react": "17.x",
     "react-dom": "17.x",
-    "typescript": "^4.1.2",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4",
     "yorkie": "^2.0.0"
   },
   "main": ".eslintrc.js",

@@ -13,7 +13,7 @@ import { stringify as qsStringify } from 'qs';
 import { Iparams, IRes, IReq, TableProps, Pagination } from './tableTypes';
 import moment from 'moment';
 import { request } from '@/.umi/plugin-request/request';
-import { Columns } from '@/utils/tsTypes';
+import { Columns } from '@/common/schemas';
 // import request from '@/utils/request';
 
 function handlerParamsError(req: IReq) {
@@ -130,21 +130,21 @@ export default () => (WrappedComponent: any) =>
       return newColumns;
     };
 
-    handleScroll = (columns: Columns) => {
-      if (columns && columns.length < 6) {
-        return {};
-      }
-      let x = 0;
-      // eslint-disable-next-line no-plusplus
-      for (let i = 0; i < columns.length; i++) {
-        if (typeof columns[i].width === 'number') {
-          x += columns[i].width;
-        } else {
-          x += 180;
-        }
-      }
-      return { x };
-    };
+    // handleScroll = (columns: Columns[]) => {
+    //   if (columns && columns.length < 6) {
+    //     return {};
+    //   }
+    //   let x: number = 0;
+    //   // eslint-disable-next-line no-plusplus
+    //   for (let i = 0; i < columns.length; i++) {
+    //     if (typeof columns[i].width === 'number') {
+    //       x += columns[i].width;
+    //     } else {
+    //       x += 180;
+    //     }
+    //   }
+    //   return { x };
+    // };
 
     /**
      * 处理localStorage pageSize
@@ -257,7 +257,7 @@ export default () => (WrappedComponent: any) =>
         handlePageParams(this.page, this.req.join),
       )}`;
       // 如果是导出Excel , 新打开页面
-      console.log(this.page.ExportExcel, 'this.page.ExportExcel');
+      // console.log(this.page.ExportExcel, 'this.page.ExportExcel');
       if (this.page.ExportExcel) {
         this.page.ExportExcel = false;
         delete this.page.ExportExcel;

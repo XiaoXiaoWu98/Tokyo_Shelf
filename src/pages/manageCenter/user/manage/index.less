@@ -1,0 +1,25 @@
+:global {
+  .ant-table-wrapper
+    .ant-spin-nested-loading
+    .ant-spin-container
+    .ant-table
+    .ant-table-container {
+    .ant-table-body {
+      &::-webkit-scrollbar {
+        width: 6px; //y轴滚动条粗细
+        height: 6px; //x轴滚动条粗细
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        background-color: white;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #14ceff;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+      }
+    }
+  }
+}

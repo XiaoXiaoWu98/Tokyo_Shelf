@@ -1,0 +1,31 @@
+/**
+ * @author $user
+ * @date $datetime
+ * @since ${pkg.version}
+ */
+
+import React,{ FC, memo, ReactElement } from 'react'
+import classnames from 'classnames'
+import style from './style.module.less'
+
+export interface ${dirName}Props {
+    [key: string]: any
+}
+
+/**
+interface ${dirName}Ref {
+
+}
+*/
+
+const ${dirName} = (props: ${dirName}Props): ReactElement => {
+
+    const { } = props;
+     
+    return (
+        <div>
+        </div>
+    )
+}
+
+export default memo(${dirName})

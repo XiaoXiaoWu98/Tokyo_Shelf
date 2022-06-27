@@ -37,7 +37,7 @@ export interface IReq {
   handleData?: (params: IRes) => {};
   onGotData?: (params: IRes) => {};
   join?: string;
-  query?: object;
+  // query?: object;
 }
 
 export interface Pagination {

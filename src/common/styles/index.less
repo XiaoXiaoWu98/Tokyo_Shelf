@@ -1,0 +1,8 @@
+.compatible(@css, @args) {
+  //兼容浏览器
+  @{css}: @args;
+  -webkit-@{css}: @args;
+  -moz-@{css}: @args;
+  -ms-@{css}: @args;
+  -o-@{css}: @args;
+}

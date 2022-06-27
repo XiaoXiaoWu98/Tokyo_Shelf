@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "importHelpers": true,
     "jsx": "react-jsx",
@@ -11,17 +11,28 @@
     "strict": true,
     "paths": {
       "@/*": ["src/*"],
-      "@@/*": ["src/.umi/*"]
+      "@@/*": ["src/.umi/*"],
+      "@@@": [".dtpl/index.ts"],
+
     },
     "allowSyntheticDefaultImports": true
   },
+  "ts-node": {
+    "esm": true,
+    "compilerOptions": {
+      "module": "esnext"
+    }
+  },
+
   "include": [
     "mock/**/*",
     "src/**/*",
     "src/**/*/index.tsx",
     "config/**/*",
     ".umirc.ts",
-    "typings.d.ts"
+    "typings.d.ts",
+    "cli",
+    "preBuild/bin/cli"
   ],
   "exclude": [
     "node_modules",
